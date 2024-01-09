@@ -4,5 +4,5 @@ This repository contains multiple CloudFormation templates designed for managing
 ## Usage of Fn::Base64
 One common usage in the provided templates involves the intrinsic function Fn::Base64. This function returns the Base64 representation of the input string. It is often employed to encode data passed to Amazon EC2 instances through the UserData property...
 
-### does order of resources definition matter ?
+### Does the order of resource definitions matter? ?
 The order of resource declaration within a CloudFormation template doesn't usually matter, but defining dependencies correctly is crucial for successful stack creation.
