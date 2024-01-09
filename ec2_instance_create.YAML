@@ -1,0 +1,11 @@
+Resources:
+  myEc2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-08fe36427228eddc4
+      KeyName: myec2instance
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          echo "hello, Ec2 instance"
