@@ -60,5 +60,15 @@ AWS Key Management Service (AWS KMS)
 
 Amazon Simple Notification Service (Amazon SNS)
 
+Assigning parameter policies:
+Parameter policies help you manage a growing set of parameters by allowing you to assign specific criteria to a parameter such as an expiration date or time to live. Parameter policies are especially helpful in forcing you to update or delete passwords and configuration data stored in Parameter Store, a capability of AWS Systems Manager. Parameter Store offers the following types of policies: Expiration, ExpirationNotification, and NoChangeNotification.
+Add policies to an existing parameter (AWS CLI)
+aws ssm put-parameter   
+    --name "parameter name" \
+    --value 'parameter value' \
+    --type parameter type \
+    --overwrite \
+    --policies "[{policies-enclosed-in-brackets-and-curly-braces}]"
+
 ### Does the order of resource definitions matter? ?
 The order of resource declaration within a CloudFormation template doesn't usually matter, but defining dependencies correctly is crucial for successful stack creation.
