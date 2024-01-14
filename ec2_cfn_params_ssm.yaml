@@ -22,4 +22,4 @@ Resources:
       KeyName: !Ref KeyNameParameter
       SecurityGroupIds:
         - !Ref SecurityGroupParameter
-      ImageId: ami-08fe36427228eddc4  # Specify your AMI ID
+      ImageId: ami-08fe36427228eddc4  
