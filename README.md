@@ -32,10 +32,11 @@ AWS::EC2::VPC::Id
 A VPC ID, such as vpc-a123baa3.
 
 #### SSM - AWS Systems Manager Parameter Store
+
 Parameter Store, a capability of AWS Systems Manager, provides secure, hierarchical storage for configuration data management and secrets management. You can store data such as passwords, database strings, Amazon Machine Image (AMI) IDs, and license codes as parameter values. You can store values as plain text or encrypted data. 
 Note: To implement password rotation lifecycles, use AWS Secrets Manager. You can rotate, manage, and retrieve database credentials, API keys, and other secrets throughout their lifecycle using Secrets Manager. Parameter Store is also integrated with Secrets Manager. You can retrieve Secrets Manager secrets when using other AWS services that already support references to Parameter Store parameters. 
 Accessible from other AWS services:
-==================================
+
 Amazon Elastic Compute Cloud (Amazon EC2)
 
 Amazon Elastic Container Service (Amazon ECS)
