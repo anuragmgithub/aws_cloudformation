@@ -1,6 +1,20 @@
 # AWS CloudFormation Templates for Infrastructure as Code (IaC) Overview
 This repository contains multiple CloudFormation templates designed for managing Infrastructure as Code (IaC). CloudFormation is a service provided by Amazon Web Services (AWS) that allows you to define and provision AWS infrastructure in a declarative manner.
 
+1. Parameters
+2. SSM
+3. Rules 
+4. mapping 
+5. conditions 
+6. transform 
+7. Resources
+8. Outputs 
+9. stack updates
+10. working with nested stacks
+11. working with stacksets
+12. custom resources
+13. Template macros
+
 ## Usage of Fn::Base64
 One common usage in the provided templates involves the intrinsic function Fn::Base64. This function returns the Base64 representation of the input string. It is often employed to encode data passed to Amazon EC2 instances through the UserData property...
 
