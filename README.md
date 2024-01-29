@@ -85,5 +85,53 @@ aws ssm put-parameter
     --overwrite \
     --policies "[{policies-enclosed-in-brackets-and-curly-braces}]"
 
+## Working with rules
+Each template rule consists of two properties:
+
+Rule condition (optional) – determines when a rule takes effect.
+Assertions (required) – describes what values users can specify for a particular parameter.
+
+For each rule, you can define only one rule condition. You can define one or more asserts within the Assertions property. If you don't define a rule condition, the rule's assertions always take effect.
+
+Rule-specific intrinsic functions:
+1) Fn::And
+The minimum number of conditions that you can include is 2, and the maximum is 10.
+
+!And [condition]
+
+Parameters
+condition
+A condition that evaluates to true or false.
+
+2) Fn::Equals
+
+!Equals [value_1, value_2]
+
+3) Fn::If
+Currently, CloudFormation supports the Fn::If intrinsic function in the metadata attribute, update policy attribute, and property values in the Resources section and Outputs sections of a template. You can use the AWS::NoValue pseudo parameter as a return value to remove the corresponding property.
+
+!If [condition_name, value_if_true, value_if_false]
+Fn::If: [condition_name, value_if_true, value_if_false]
+
+4) Fn::Not
+Returns true for a condition that evaluates to false or returns false for a condition that evaluates to true. Fn::Not acts as a NOT operator.
+
+!Not [condition]
+
+Supported functions
+
+You can use the following functions in the Fn::If condition:
+
+Fn::Base64
+Fn::FindInMap
+Fn::GetAtt
+Fn::GetAZs
+Fn::If
+Fn::Join
+Fn::Select
+Fn::Sub
+Ref
+
 ### Does the order of resource definitions matter? ?
 The order of resource declaration within a CloudFormation template doesn't usually matter, but defining dependencies correctly is crucial for successful stack creation.
+
