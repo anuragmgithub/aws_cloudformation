@@ -132,6 +132,38 @@ Fn::Select
 Fn::Sub
 Ref
 
+## Mappings
+You use the Fn::FindInMap intrinsic function to retrieve values in a map.
+You can't include parameters, pseudo parameters, or intrinsic functions in the Mappings section.
+example : basic mapping
+Mappings: 
+  RegionMap: 
+    us-east-1: 
+      "HVM64": "ami-0ff8a91507f77f867"
+    us-west-1: 
+      "HVM64": "ami-0bdb828fd58c52235"
+    eu-west-1: 
+      "HVM64": "ami-047bb4163c506cd98"
+    ap-southeast-1: 
+      "HVM64": "ami-08569b978cc4dfa10"
+    ap-northeast-1: 
+      "HVM64": "ami-06cd52961ce9f0d85"
+
+Pseudo parameters reference:
+Pseudo parameters are parameters that are predefined by AWS CloudFormation. You don't declare them in your template. Use them the same way as you would a parameter, as the argument for the Ref function.
+The following snippet assigns the value of the AWS::Region pseudo parameter to an output value:
+Outputs:
+  MyStacksRegion:
+    Value: !Ref "AWS::Region"
+
+AWS::AccountId
+
+Returns the AWS account ID of the account in which the stack is being created.
+
+AWS::NoValue
+
+
 ### Does the order of resource definitions matter? ?
 The order of resource declaration within a CloudFormation template doesn't usually matter, but defining dependencies correctly is crucial for successful stack creation.
+
 
