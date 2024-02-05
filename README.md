@@ -162,6 +162,19 @@ Returns the AWS account ID of the account in which the stack is being created.
 
 AWS::NoValue
 
+## NESTED STACKS 
+In AWS CloudFormation, nested stacks refer to the concept of breaking down a complex CloudFormation template into smaller, modular templates, which are then referenced or included within a main template. This allows you to create a hierarchy of templates where a "parent" or main template can include or reference "child" templates, creating a nested structure.
+
+The key benefits of using nested stacks in CloudFormation include:
+
+1. Modularity: Break down a large and complex CloudFormation template into smaller, more manageable pieces. 
+ piece can focus on specific resources or components of your infrastructure.
+
+2. Reusability: Create reusable templates that can be used across different stacks. This can be particularly useful when you have common infrastructure patterns that are repeated in multiple environments or applications.
+
+3. Scoping Permissions: Assign permissions at the nested stack level, allowing you to control access to specific parts of your infrastructure.
+
+4. Parallelization: Deploying nested stacks can be done in parallel, which can improve deployment times.
 
 ### Does the order of resource definitions matter? ?
 The order of resource declaration within a CloudFormation template doesn't usually matter, but defining dependencies correctly is crucial for successful stack creation.
